@@ -38,14 +38,22 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+
+    # Specified header to make requests to the server and remove that error:  No 'Access-Control-Allow-Origin'...
+    # whith django-cors-headers django package
+    'corsheaders',
+
     # Add the rest_framework
     'rest_framework',
-    
+
     # Add new apps
     'articles',
 ]
 
 MIDDLEWARE = [
+    # From django-cors-headers django package
+    'corsheaders.middleware.CorsMiddleware',
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -134,6 +142,10 @@ REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+        # 'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+         'rest_framework.permissions.AllowAny',
     ]
 }
+
+# From django-cors-headers django package
+CORS_ORIGIN_ALLOW_ALL = True
