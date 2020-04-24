@@ -5,21 +5,21 @@
 
 ## Backend
 
-#### Create virtualenv for Django:
+#### Install pipenv
 
-`virtualenv env`
+`pip3 install pipenv`
 
-#### Activate:
+#### Create virtualenv for Django and activated:
 
-`source env/bin/activate`
+`pip3 shell`
 
-#### install django:
+#### Install django:
 
-`pip install django`
+`pipenv install django`
 
-#### install django rest framework:
+#### Install django rest framework:
 
-`pip install djangorestframework`
+`pipenv install djangorestframework`
 
 
 #### Running the backend server:
