@@ -2,6 +2,8 @@
 
 `django-admin startproject NAME_OF_PROJECT`
 
+###### *Install requirements
+`pip install -r requirements.txt`
 
 ## Backend
 
